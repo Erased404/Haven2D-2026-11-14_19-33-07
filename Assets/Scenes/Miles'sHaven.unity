@@ -256,7 +256,7 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1001 &1164741018
+--- !u!1001 &1291808322
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -266,15 +266,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 812327288688398226, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.95427
+      value: -0.68778
       objectReference: {fileID: 0}
     - target: {fileID: 812327288688398226, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11737
+      value: -2.54247
       objectReference: {fileID: 0}
     - target: {fileID: 812327288688398226, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -308,40 +308,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3021276586844202550, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1292590319}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
---- !u!1 &1292590318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-  m_PrefabInstance: {fileID: 1164741018}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1292590319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292590318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d876ccaa935434bbd4ae7b2389c38f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerGhost: 0
-  moveSpeed: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 791233773}
-  - {fileID: 1164741018}
+  - {fileID: 1291808322}
