@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   playerGhost: 1
-  moveSpeed: 1
+  GhostSpeed: 5
+  moveVector: {x: 0, y: 0}
 --- !u!50 &3062681087565912316
 Rigidbody2D:
   serializedVersion: 5
@@ -74,7 +75,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8887376219272106290
 GameObject:
   m_ObjectHideFlags: 0
