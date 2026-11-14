@@ -1,1 +1,18 @@
--
+-Box, moveable by zombie
+
+method to allow ghost to pass through most objects
+
+lever, ghost only
+
+button, box and zombie
+
+lazer, kills ghost (sets location to level spawn point) on touch
+
+return to body when ghost switches.
+
+
+
+
+Wip ideas, do later
+
+Mirror?, teleport for ghost
