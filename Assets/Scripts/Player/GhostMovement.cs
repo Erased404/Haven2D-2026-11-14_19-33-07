@@ -1,12 +1,12 @@
 using UnityEngine;
 
 
-public class PlayerMovement : MonoBehaviour
+public class GhostMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public bool playerGhost=false;
-    public float moveSpeed = 1;
-    private int move = 0;
+    public float moveSpeed = 1000;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,26 +20,36 @@ public class PlayerMovement : MonoBehaviour
         {
             playerGhost = !playerGhost;
         }
-        if (Input.GetKeyUp(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.W))
         {
-            moveVector.y=1f * moveSpeed ;
+            moveVector.y=1f * moveSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            moveVector.x = 1f*moveSpeed;
-        }
-        if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             moveVector.y = 1f * moveSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.D))
+        else {
+            moveVector.y = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.A))
         {
             moveVector.x = 1f * moveSpeed;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            moveVector.x = 1f * moveSpeed;
+        }
+        else
+        {
+            moveVector.x = 0f;
         }
     }
     private Vector2 moveVector = new Vector2(0f, 0f);
     void FixedUpdate()
     {
         rb.AddForce(moveVector);
+
     }
 }
