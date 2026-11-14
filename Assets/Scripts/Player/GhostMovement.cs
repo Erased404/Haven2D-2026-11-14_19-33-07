@@ -56,8 +56,14 @@ public class GhostMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-
-        rb.linearVelocity=moveVector*GhostSpeed;        
+        if (moveVector != new Vector2(0f, 0f))
+        {
+            rb.linearVelocity = moveVector * GhostSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = (rb.linearVelocity * 0.8f);
+        }        
         
 
     }
