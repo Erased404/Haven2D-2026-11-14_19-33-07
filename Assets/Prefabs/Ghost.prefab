@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812327288688398226}
-  - component: {fileID: 8521160601010375417}
   - component: {fileID: 3062681087565912316}
+  - component: {fileID: 8521160601010375417}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -34,21 +34,6 @@ Transform:
   - {fileID: 4793570787867499851}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8521160601010375417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773234362763363977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d876ccaa935434bbd4ae7b2389c38f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerGhost: 1
-  GhostSpeed: 5
-  moveVector: {x: 0, y: 0}
 --- !u!50 &3062681087565912316
 Rigidbody2D:
   serializedVersion: 5
@@ -72,10 +57,25 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8521160601010375417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773234362763363977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d876ccaa935434bbd4ae7b2389c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 10
+  accelSpeed: 5
+  deccelSpeed: 8
 --- !u!1 &8887376219272106290
 GameObject:
   m_ObjectHideFlags: 0

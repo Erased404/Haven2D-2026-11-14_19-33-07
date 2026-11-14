@@ -4,67 +4,40 @@ using UnityEngine;
 
 public class GhostMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public bool playerGhost=false;
-    public float GhostSpeed = 5f;
-    public Vector2 moveVector = new Vector2(0f, 0f);
+    public float moveSpeed = 8f;
 
+    private Rigidbody2D rb;
+    private float horizontalInput;
+    private float verticalInput;
+    private bool isGrounded;
+    public float accelSpeed = 10f;
+    public float deccelSpeed = 5f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb=GetComponent<Rigidbody2D>();
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            playerGhost = !playerGhost;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveVector.y=1f;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            moveVector.y = -1f;
-        }
-        else {
-            moveVector.y = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveVector.x = -1f ;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveVector.x =1f;
-        }
-        else
-        {
-            moveVector.x = 0f;
-        }
+        // Get horizontal direction (-1 for Left, 1 for Right, 0 for Idle)
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
     }
-    
+
     void FixedUpdate()
     {
-        if (moveVector != new Vector2(0f, 0f))
+        // Apply horizontal velocity while maintaining current vertical falling/rising speed
+        Vector2 movement = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement, accelSpeed * Time.deltaTime);
+
+        if (movement != Vector2.zero)
         {
-            rb.linearVelocity = moveVector * GhostSpeed;
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement, accelSpeed * Time.deltaTime);
         }
         else
         {
-            rb.linearVelocity = (rb.linearVelocity * 0.8f);
-        }        
-        
-
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, deccelSpeed * Time.deltaTime);
+        }
     }
 }
