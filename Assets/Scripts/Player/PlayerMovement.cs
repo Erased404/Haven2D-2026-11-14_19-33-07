@@ -2,29 +2,51 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float decelSpeed = 20f;
-    float moveVector;
-    Rigidbody2D rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float moveSpeed = 8f;
+    public float accelSpeed = 5f;
+    public float deccelSpeed = 10f;
+    public float jumpForce = 12f;
+
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
+    private Rigidbody2D rb;
+    private float horizontalInput;
+    private bool isGrounded;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        moveVector = Input.GetAxis("Horizontal");
-        
-        if (Mathf.Abs(moveVector)==0)
+        // Get horizontal direction (-1 for Left, 1 for Right, 0 for Idle)
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        // Perform a small circle check at the player's feet to see if they are standing on the ground
+        isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.15f, groundLayer);
+
+        // Jump trigger (Checked in Update so keypresses aren't missed)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, decelSpeed * Time.deltaTime);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        rb.AddForce(Vector2.right * (moveVector * moveSpeed));
+        Debug.Log(isGrounded);
+        Vector2 movement;
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+        {
+            movement = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocityX = Mathf.Lerp(rb.linearVelocityX, movement.x, accelSpeed * Time.deltaTime);
+        }
+        else
+        {
+            rb.linearVelocityX = Mathf.Lerp(rb.linearVelocityX, 0, deccelSpeed * Time.deltaTime);
+        }
+        // Apply horizontal linearVelocity while maintaining current vertical falling/rising speed
     }
 }
