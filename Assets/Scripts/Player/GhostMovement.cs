@@ -6,7 +6,7 @@ public class GhostMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public bool playerGhost=false;
-    public float moveSpeed = 1000f;
+    public float GhostSpeed = 5f;
     public Vector2 moveVector = new Vector2(0f, 0f);
 
 
@@ -57,8 +57,8 @@ public class GhostMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        rb.AddForce(moveVector*moveSpeed);
-        rb.AddForce(moveVector*-0.1f);
+        rb.linearVelocity=moveVector*GhostSpeed;        
+        
 
     }
 }
