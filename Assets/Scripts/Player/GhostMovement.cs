@@ -24,11 +24,11 @@ public class GhostMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            moveVector.y=1f * moveSpeed;
+            moveVector.y=1f;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            moveVector.y = 1f * moveSpeed;
+            moveVector.y = 1f;
         }
         else {
             moveVector.y = 0f;
@@ -36,11 +36,11 @@ public class GhostMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            moveVector.x = 1f * moveSpeed;
+            moveVector.x = 1f ;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            moveVector.x = 1f * moveSpeed;
+            moveVector.x = 1f;
         }
         else
         {
@@ -50,7 +50,7 @@ public class GhostMovement : MonoBehaviour
     private Vector2 moveVector = new Vector2(0f, 0f);
     void FixedUpdate()
     {
-        rb.AddForce(moveVector);
+        rb.AddForce(moveVector*moveSpeed);
 
     }
 }
