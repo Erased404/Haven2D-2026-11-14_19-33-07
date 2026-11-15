@@ -51,15 +51,19 @@ public class LazerHandler : MonoBehaviour
     }
     public void OnCollisionStay2D(Collision2D collision)
     {
-        GameObject c1 = collision.gameObject;
-        Debug.Log(c1);
-        Rigidbody2D rb = c1.GetComponent<Rigidbody2D>();
+        if (collision.gameObject.name == "Ghost")
+        {
+            GameObject c1 = collision.gameObject;
+            Debug.Log(c1);
+            Rigidbody2D rb = c1.GetComponent<Rigidbody2D>();
 
-        rb.linearVelocity = Vector2.zero;
-        personaSwitch.enabled = false;
-        gmS.enabled = true;
-        pmS.enabled = false;
-        personaSwitch.GhostEnabled = true;
+            rb.linearVelocity = Vector2.zero;
+            personaSwitch.enabled = false;
+            gmS.enabled = true;
+            pmS.enabled = false;
+            personaSwitch.GhostEnabled = true;
+        }
+        
 
     }
     //{
