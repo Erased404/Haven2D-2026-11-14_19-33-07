@@ -29,6 +29,7 @@ public class GhostMovement : MonoBehaviour
     {
         // Apply horizontal velocity while maintaining current vertical falling/rising speed
         Vector2 movement = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+
         rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement, accelSpeed * Time.deltaTime);
 
         if (movement != Vector2.zero)
@@ -37,7 +38,9 @@ public class GhostMovement : MonoBehaviour
         }
         else
         {
+            
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, deccelSpeed * Time.deltaTime);
+
         }
     }
 }
