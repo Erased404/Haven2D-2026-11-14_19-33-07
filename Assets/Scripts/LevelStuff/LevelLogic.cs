@@ -5,8 +5,6 @@ using UnityEngine;
 public class LevelLogic : MonoBehaviour
 {
     public SceneManagerScript sms;
-    public int leverCount=1;
-    public int currentLeverCount=0;
     public GameObject[] doors;
     public float openDuration = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
