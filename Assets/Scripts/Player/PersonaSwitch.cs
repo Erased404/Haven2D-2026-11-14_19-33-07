@@ -50,6 +50,7 @@ public class PersonaSwitch : MonoBehaviour
             {
                 gm.transform.position = Vector3.Lerp(gm.transform.position, new Vector3(pm.transform.position.x, pm.transform.position.y + 1, 0), switchSpeed * Time.deltaTime);
             }
+            
             else { gm.SetActive(false); }
         }
     }
