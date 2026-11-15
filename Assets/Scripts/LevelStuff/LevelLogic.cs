@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
 {
-    public int leverCount=0;
-    public int currentLeverCount;
+    public int leverCount=1;
+    public int currentLeverCount=0;
     public GameObject[] doors;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +14,7 @@ public class LevelLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(currentLeverCount!=leverCount)
+        if(currentLeverCount==leverCount)
         {
             OpenDoor(0);
         }
@@ -22,14 +22,14 @@ public class LevelLogic : MonoBehaviour
 
     void OpenDoor(int index)
     {
-        GameObject door = GameObject.Find(name);
-        if (door.transform.localScale.y >= 0.025)
-        { 
-            door.transform.localScale = Vector3.Lerp(door.transform.localScale, new Vector3(1, 0, 1), 0.5f * Time.fixedDeltaTime);        }
+        if (doors[index].transform.localScale.y <= 0.02)
+        {
+            doors[index].transform.localScale = new Vector3(1, 0, 1);
+            currentLeverCount++;
+        }
         else
         {
-            door.transform.localScale = new Vector3(1, 0, 1);
-            //currentLeverCount++;
+            doors[index].transform.localScale = Vector3.Lerp(doors[index].transform.localScale, new Vector3(1, 0, 1), 1.5f * Time.fixedDeltaTime);
         }
     }
 }
