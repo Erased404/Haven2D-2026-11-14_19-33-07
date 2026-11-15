@@ -4,10 +4,13 @@ public class GhostAnimations : MonoBehaviour
 {
     public Animator animP;
     public Animator animG;
+    private GameObject player;
     // Update is called once per frame
     void Start()
     {
         ghostEnter();
+        player = GameObject.Find("Player/Square");
+        animP = player.GetComponent<Animator>();
     }
 
     public void ghostEnter()

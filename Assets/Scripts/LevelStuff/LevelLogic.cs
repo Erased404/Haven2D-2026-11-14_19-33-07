@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
 {
-    private SceneManagerScript sms;
-    public int leverCount=1;
-    public int currentLeverCount=0;
+    public SceneManagerScript sms;
     public GameObject[] doors;
     public float openDuration = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-   
+        sms = GetComponent<SceneManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            sms.ReloadCurrentScene();
+        }
     }
 
     public void OpenDoor(int index)
