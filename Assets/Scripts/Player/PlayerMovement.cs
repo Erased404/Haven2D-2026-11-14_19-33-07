@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             movement = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
             playerSpr.transform.localScale = new Vector3(horizontalInput * 4, playerSpr.transform.localScale.y, playerSpr.transform.localScale.z);
             anima.SetBool("Idle", false);
+            anima.SetTrigger("Run");
             rb.linearVelocityX = Mathf.Lerp(rb.linearVelocityX, movement.x, accelSpeed * Time.deltaTime);
         }
         else

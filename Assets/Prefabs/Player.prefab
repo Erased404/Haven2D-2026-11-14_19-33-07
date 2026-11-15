@@ -29,11 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.93261, y: 2.65953, z: 0}
-<<<<<<< Updated upstream
-  m_LocalScale: {x: -4, y: 1, z: 1}
-=======
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
->>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8943688768747319184}
@@ -129,13 +125,8 @@ MonoBehaviour:
   accelSpeed: 5
   deccelSpeed: 10
   jumpKeys: 7700000020000000i
-<<<<<<< Updated upstream
-  jumpForce: 12
-  playerSpr: {fileID: 0}
-=======
   jumpForce: 15
   playerSpr: {fileID: 7190658705185894545}
->>>>>>> Stashed changes
   groundCheck: {fileID: 8765618915265292511}
   groundLayer:
     serializedVersion: 2
