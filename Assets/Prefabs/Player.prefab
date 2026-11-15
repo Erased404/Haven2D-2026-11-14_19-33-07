@@ -126,6 +126,7 @@ MonoBehaviour:
   deccelSpeed: 10
   jumpKeys: 7700000020000000i
   jumpForce: 12
+  playerSpr: {fileID: 7190658705185894545}
   groundCheck: {fileID: 8765618915265292511}
   groundLayer:
     serializedVersion: 2

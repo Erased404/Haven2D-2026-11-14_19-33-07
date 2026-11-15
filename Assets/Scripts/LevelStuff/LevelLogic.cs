@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
@@ -5,6 +7,7 @@ public class LevelLogic : MonoBehaviour
     public int leverCount=1;
     public int currentLeverCount=0;
     public GameObject[] doors;
+    public float openDuration = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,14 +22,19 @@ public class LevelLogic : MonoBehaviour
 
     public void OpenDoor(int index)
     {
-        if (doors[index].transform.localScale.y <= 0.02)
+        StartCoroutine(openDoor(index));
+    }
+
+    private IEnumerator openDoor(int index)
+    {
+        float elapsed = 0f;
+        while(elapsed<openDuration)
         {
-            doors[index].transform.localScale = new Vector3(1, 0, 1);
-            currentLeverCount++;
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed/openDuration);
+            doors[index].transform.localScale = Vector3.Lerp(doors[index].transform.localScale, new Vector3(1, 0, 1), t);
+            yield return null;
         }
-        else
-        {
-            doors[index].transform.localScale = Vector3.Lerp(doors[index].transform.localScale, new Vector3(1, 0, 1), 1.5f * Time.fixedDeltaTime);
-        }
+        doors[index].transform.localScale = new Vector3(1f, 0f, 1f);
     }
 }
