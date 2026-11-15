@@ -53,9 +53,9 @@ MonoBehaviour:
   GhostEnabled: 0
   switchKey: 113
   switchSpeed: 5
-  returnThreshold: 1.5
+  returnThreshold: 0.5
   anim: {fileID: 0}
-  fpsLimit: 0
+  fpsLimit: 60
 --- !u!114 &3644735889799765572
 MonoBehaviour:
   m_ObjectHideFlags: 0
