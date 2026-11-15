@@ -17,7 +17,6 @@ public class LazerHandler : MonoBehaviour
         gm = GameObject.Find("Ghost");
         pmS = pm.GetComponent<PlayerMovement>();
         gmS = gm.GetComponent<GhostMovement>();
-    }
 
     // Update is called once per frame
     void Update()
