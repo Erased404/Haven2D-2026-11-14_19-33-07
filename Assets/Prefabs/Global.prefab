@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 772040511389501242}
   - component: {fileID: 2037942036361407521}
   - component: {fileID: 3644735889799765572}
+  - component: {fileID: 2553551925304614671}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -73,3 +74,15 @@ MonoBehaviour:
   doors:
   - {fileID: 0}
   openDuration: 3
+--- !u!114 &2553551925304614671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339222138065364208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5f5528f1418bd478a03593ab757c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
