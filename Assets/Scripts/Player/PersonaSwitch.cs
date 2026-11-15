@@ -26,6 +26,7 @@ public class PersonaSwitch : MonoBehaviour
         gm = GameObject.Find("Ghost");
         pmS = pm.GetComponent<PlayerMovement>();
         gmS = gm.GetComponent<GhostMovement>();
+        anim = gm.GetComponent<GhostAnimations>();
 
     }
 
