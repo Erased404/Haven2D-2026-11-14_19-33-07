@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
 {
+    private SceneManagerScript sms;
     public int leverCount=1;
     public int currentLeverCount=0;
     public GameObject[] doors;
@@ -11,13 +12,13 @@ public class LevelLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void OpenDoor(int index)
