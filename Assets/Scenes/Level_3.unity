@@ -466,6 +466,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever
       objectReference: {fileID: 0}
+    - target: {fileID: 8070752809310012432, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070752809310012432, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -641,6 +649,14 @@ PrefabInstance:
     - target: {fileID: 1362490963072526240, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479502361149375519, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_Size.x
+      value: 3.999659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342052094778904176, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1599
       objectReference: {fileID: 0}
     - target: {fileID: 3966693405294213551, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
