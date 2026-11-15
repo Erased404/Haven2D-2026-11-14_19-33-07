@@ -8,7 +8,7 @@ public class PersonaSwitch : MonoBehaviour
     public PlayerMovement pmS;
     public GhostMovement gmS;
     public GameObject gameCamera;
-    public bool GhostEnabled=false;
+    public bool GhostEnabled = false;
     public KeyCode switchKey = KeyCode.Q;
     public float switchSpeed = 5f;
     public float returnThreshold = 1.5f;
@@ -30,7 +30,7 @@ public class PersonaSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(switchKey))
+        if (Input.GetKeyUp(switchKey))
         {
             GhostEnabled = !GhostEnabled;
         }
