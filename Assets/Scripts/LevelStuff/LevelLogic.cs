@@ -14,13 +14,10 @@ public class LevelLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentLeverCount==leverCount)
-        {
-            OpenDoor(0);
-        }
+
     }
 
-    void OpenDoor(int index)
+    public void OpenDoor(int index)
     {
         if (doors[index].transform.localScale.y <= 0.02)
         {
