@@ -119,11 +119,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &156777190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7190658705185894545, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
+--- !u!95 &156777191 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3180554623553885330, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
   m_PrefabInstance: {fileID: 602522598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &456899580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8887376219272106290, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+  m_PrefabInstance: {fileID: 1389739260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &564075059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+  m_PrefabInstance: {fileID: 1389739260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &564075060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8521160601010375417, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+  m_PrefabInstance: {fileID: 1389739260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564075059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d876ccaa935434bbd4ae7b2389c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+--- !u!114 &564075063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 932778921113917236, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+  m_PrefabInstance: {fileID: 1389739260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564075059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f14bf4bc9fef4c38990d048e4cbe36d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostAnimations
 --- !u!1001 &602522598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,10 +164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 679295358397450479, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
-      propertyPath: playerSpr
-      value: 
-      objectReference: {fileID: 156777190}
     - target: {fileID: 4924264409259236688, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -179,10 +207,6 @@ PrefabInstance:
     - target: {fileID: 7818247212309411025, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8765618915265292511, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -492,15 +516,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3045ebfb358b71418257432111378c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersonaSwitch
-  pm: {fileID: 0}
-  gm: {fileID: 0}
-  pmS: {fileID: 0}
-  gmS: {fileID: 0}
-  gameCamera: {fileID: 0}
+  pm: {fileID: 1415267725}
+  gm: {fileID: 564075059}
+  pmS: {fileID: 1415267726}
+  gmS: {fileID: 564075060}
+  gameCamera: {fileID: 1051340258}
   GhostEnabled: 0
   switchKey: 113
   switchSpeed: 5
-  returnThreshold: 1.5
+  returnThreshold: 0.5
+  anim: {fileID: 564075063}
   fpsLimit: 60
 --- !u!4 &1348145470
 Transform:
@@ -528,14 +553,6 @@ PrefabInstance:
     - target: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_Name
       value: Ghost
-      objectReference: {fileID: 0}
-    - target: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 773234362763363977, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 812327288688398226, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -577,15 +594,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8887376219272106290, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 932778921113917236, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+      propertyPath: animP
+      value: 
+      objectReference: {fileID: 156777191}
+    - target: {fileID: 8521160601010375417, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+      propertyPath: playerSpr
+      value: 
+      objectReference: {fileID: 456899580}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f3911544553de489cb9ee5afd9c0be, type: 3}
+--- !u!1 &1415267725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4924264409259236688, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
+  m_PrefabInstance: {fileID: 602522598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1415267726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 679295358397450479, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
+  m_PrefabInstance: {fileID: 602522598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415267725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff31213fc54b394783e9ebe1a0ac2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &1827042444
 GameObject:
   m_ObjectHideFlags: 0
