@@ -79,7 +79,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -124,11 +124,12 @@ MonoBehaviour:
   moveSpeed: 10
   accelSpeed: 5
   deccelSpeed: 10
+  jumpKeys: 7700000020000000i
   jumpForce: 12
   groundCheck: {fileID: 8765618915265292511}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &7190658705185894545
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 20637bf34b9c83c488cf3ab0704fb5f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

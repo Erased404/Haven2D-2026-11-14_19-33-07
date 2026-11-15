@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 812327288688398226}
   - component: {fileID: 3062681087565912316}
   - component: {fileID: 8521160601010375417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4793570787867499851}
   - component: {fileID: 4178175154439713894}
   - component: {fileID: 8264646953516910021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
