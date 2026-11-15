@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PersonaSwitch : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class PersonaSwitch : MonoBehaviour
     public bool GhostEnabled=false;
     public KeyCode switchKey = KeyCode.Q;
     public float switchSpeed = 5f;
+    public float returnThreshold = 1.5f;
+
+    public int fpsLimit = 60;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = fpsLimit;
         gameCamera = GameObject.Find("Main Camera");
         pm = GameObject.Find("Player");
         gm = GameObject.Find("Ghost");
@@ -32,6 +36,7 @@ public class PersonaSwitch : MonoBehaviour
         }
         if (GhostEnabled)
         {
+            gm.SetActive(true);
             pmS.enabled = false;
             gmS.enabled = true;
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, new Vector3(gm.transform.position.x, gm.transform.position.y, -1f), switchSpeed * Time.deltaTime);
@@ -41,7 +46,11 @@ public class PersonaSwitch : MonoBehaviour
             gmS.enabled = false;
             pmS.enabled = true;
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, new Vector3(pm.transform.position.x, pm.transform.position.y, -1f), switchSpeed * Time.deltaTime);
-
+            if (Vector2.Distance(gm.transform.position, pm.transform.position) > returnThreshold)
+            {
+                gm.transform.position = Vector3.Lerp(gm.transform.position, new Vector3(pm.transform.position.x, pm.transform.position.y + 1, 0), switchSpeed * Time.deltaTime);
+            }
+            else { gm.SetActive(false); }
         }
     }
 }

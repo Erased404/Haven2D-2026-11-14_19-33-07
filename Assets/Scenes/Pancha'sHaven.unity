@@ -171,6 +171,8 @@ MonoBehaviour:
   GhostEnabled: 0
   switchKey: 113
   switchSpeed: 5
+  returnThreshold: 1.5
+  fpsLimit: 0
 --- !u!1 &409442013
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +704,10 @@ PrefabInstance:
     - target: {fileID: 4924264409259236688, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329321638150240041, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7818247212309411025, guid: f176e5269b22f5843aa0c1f3108e913b, type: 3}
       propertyPath: m_LocalPosition.x

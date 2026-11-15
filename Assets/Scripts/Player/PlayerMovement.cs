@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 8f;
     public float accelSpeed = 5f;
     public float deccelSpeed = 10f;
+    public KeyCode[] jumpKeys = {KeyCode.W, KeyCode.Space};
     public float jumpForce = 12f;
 
     public Transform groundCheck;
@@ -27,10 +28,16 @@ public class PlayerMovement : MonoBehaviour
         // Perform a small circle check at the player's feet to see if they are standing on the ground
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.15f, groundLayer);
 
-        // Jump trigger (Checked in Update so keypresses aren't missed)
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            foreach (KeyCode key in jumpKeys)
+            {
+                if (Input.GetKeyDown(key))
+                {
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                    break; // Prevents jumping multiple times if two jump keys are pressed on the same frame
+                }
+            }
         }
     }
 
