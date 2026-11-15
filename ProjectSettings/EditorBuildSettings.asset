@@ -8,8 +8,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: e2aad039c2fed2047a863c16eee4232d
-  - enabled: 0
-    path: Assets/Scenes/Pancha'sHaven.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: 93711d54d16b40e4cb276f00ae74e3da
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: bc375b3ec734fcc49a73f095bab1e23b
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: d9a8bbdee44f0dd4aa1c9a3ab5426b08
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: 30fbf44dcba201c4e8839f9db0630c98
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: 98be91dfc213d864b96fad6e7e4e7f55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
