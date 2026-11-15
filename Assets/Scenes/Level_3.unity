@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 103952789401386358, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
       propertyPath: canUseThreshold
-      value: 1
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1212408165010261331, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 2068619892}
     - target: {fileID: 3644735889799765572, guid: 8b6712e943fb3db408ccfedbeca5b3f3, type: 3}
       propertyPath: currentLeverCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644735889799765572, guid: 8b6712e943fb3db408ccfedbeca5b3f3, type: 3}
       propertyPath: 'doors.Array.data[0]'
@@ -640,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362490963072526240, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3966693405294213551, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894480887264656533, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6375820840692329214, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: threshold
