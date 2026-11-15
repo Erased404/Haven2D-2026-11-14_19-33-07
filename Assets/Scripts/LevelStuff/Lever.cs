@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    public LevelLogic ll;
+    public GameObject global;
+    private LevelLogic ll;
     public GameObject ghost;
     public int doorToOpen;
     public float canUseThreshold = 1f;
@@ -10,7 +11,9 @@ public class Lever : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ghost = GameObject.Find("Ghost");   
+        ghost = GameObject.Find("Ghost");
+        global = GameObject.Find("Global");
+        ll = global.GetComponent<LevelLogic>();
     }
 
     // Update is called once per frame
