@@ -13,6 +13,8 @@ public class PersonaSwitch : MonoBehaviour
     public float switchSpeed = 5f;
     public float returnThreshold = 1.5f;
 
+    public GhostAnimations anim;
+
     public int fpsLimit = 60;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,16 +35,26 @@ public class PersonaSwitch : MonoBehaviour
         if (Input.GetKeyUp(switchKey))
         {
             GhostEnabled = !GhostEnabled;
+            if (GhostEnabled)
+            {
+                anim.ghostExit();
+            }
+            else
+            {
+                anim.ghostEnter();
+            }
         }
         if (GhostEnabled)
         {
-            gm.SetActive(true);
+            pm.GetComponent<BoxCollider2D>().enabled = false;
+            gm.GetComponent<BoxCollider2D>().enabled = true; 
             pmS.enabled = false;
             gmS.enabled = true;
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, new Vector3(gm.transform.position.x, gm.transform.position.y, -1f), switchSpeed * Time.deltaTime);
         }
         else
         {
+            pm.GetComponent<BoxCollider2D>().enabled = true;
             gmS.enabled = false;
             pmS.enabled = true;
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, new Vector3(pm.transform.position.x, pm.transform.position.y, -1f), switchSpeed * Time.deltaTime);
@@ -50,8 +62,10 @@ public class PersonaSwitch : MonoBehaviour
             {
                 gm.transform.position = Vector3.Lerp(gm.transform.position, new Vector3(pm.transform.position.x, pm.transform.position.y + 1, 0), switchSpeed * Time.deltaTime);
             }
-            
-            else { gm.SetActive(false); }
+            else 
+            { 
+                gm.GetComponent<BoxCollider2D>().enabled = false; 
+            }
         }
     }
 }

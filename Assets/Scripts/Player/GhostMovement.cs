@@ -9,9 +9,10 @@ public class GhostMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalInput;
     private float verticalInput;
-    private bool isGrounded;
     public float accelSpeed = 10f;
     public float deccelSpeed = 5f;
+
+    public GameObject playerSpr;
 
     void Start()
     {
@@ -35,6 +36,15 @@ public class GhostMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement, accelSpeed * Time.deltaTime);
+            if (horizontalInput != 0)
+            {
+                playerSpr.transform.localScale = new Vector3(horizontalInput * 3, playerSpr.transform.localScale.y, playerSpr.transform.localScale.z);
+            }
+            else
+            {
+                playerSpr.transform.localScale = new Vector3(3, playerSpr.transform.localScale.y, playerSpr.transform.localScale.z);
+            }
+            
         }
         else
         {
