@@ -212,6 +212,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.4339623
       objectReference: {fileID: 0}
+    - target: {fileID: 3310622304308124812, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8126473
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310622304308124812, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0131545
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310622304308124812, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.04770112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310622304308124812, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0363822
+      objectReference: {fileID: 0}
     - target: {fileID: 7756256286731201122, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.18
@@ -222,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756256286731201122, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.49
+      value: -4.67
       objectReference: {fileID: 0}
     - target: {fileID: 7756256286731201122, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
       propertyPath: m_LocalPosition.z
@@ -256,7 +272,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6375820840692329214, guid: 00cf5d67717fb204898bf0c94f79f971, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1021,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1212408165010261331, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.34
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 1212408165010261331, guid: 8a2d70cde47350f42bfb129234cb08ea, type: 3}
       propertyPath: m_LocalPosition.z
