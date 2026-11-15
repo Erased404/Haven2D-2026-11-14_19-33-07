@@ -78,6 +78,7 @@ MonoBehaviour:
   moveSpeed: 10
   accelSpeed: 5
   deccelSpeed: 8
+  playerSpr: {fileID: 8887376219272106290}
 --- !u!114 &932778921113917236
 MonoBehaviour:
   m_ObjectHideFlags: 0

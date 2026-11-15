@@ -4,14 +4,14 @@ public class GhostWall : MonoBehaviour
 {
     public Material normalMat;
     public Material phaseMat;
-    private Renderer renderer;
+    public Renderer thisRenderer;
     Transform ghost;
     [SerializeField] private float threshold = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        thisRenderer = GetComponentInChildren<Renderer>();
         ghost = GameObject.Find("Ghost").transform;
-        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class GhostWall : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, ghost.position) <= threshold)
         {
-            renderer.material = phaseMat;
+            thisRenderer.material = phaseMat;
         }
         else
         {
-            renderer.material = normalMat;
+            thisRenderer.material = normalMat;
         }
     }
 }
