@@ -14,6 +14,7 @@ public class PersonaSwitch : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Application.targetFrameRate = 60;
         gameCamera = GameObject.Find("Main Camera");
         pm = GameObject.Find("Player");
         gm = GameObject.Find("Ghost");

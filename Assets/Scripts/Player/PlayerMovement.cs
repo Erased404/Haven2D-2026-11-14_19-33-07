@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
         Vector2 movement;
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
